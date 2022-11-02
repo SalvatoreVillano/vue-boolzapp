@@ -15,10 +15,57 @@
   <body>
       <main>
           <div class="bg" id="app">
+            <div class="container-fluid vh-100 p-3">
+                <div class="container d-flex h-100 p-3">
+                <div class="left-zone bg-light">
+                <div class="icon-mine p-1 align-items-center d-flex justify-content-between">
+        <div class="icon-user d-flex align-content-center">
+            <div>
+                <img src="img/avatar_3.jpg" class="img-fluid rounded-circle" alt="">
+            </div>
+            <div class="ps-2 d-flex">
+               <span class="my-3">Salvatore</span>
+            </div>
+        </div>
+        <div class="mx-2 header-icon">
+            <i class="fa-solid fa-circle-notch"></i></a>
+            <i class="fa-solid fa-message"></i></a>
+            <i class="fa-solid fa-ellipsis-vertical"></i></a>
+        </div>
 
-
-
-
+    </div>
+    <div class="bg-notification py-1 px-3 d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-center">
+            <i class="fas fa-bell-slash fa-xl"></i>
+        </div>
+        <div class="px-3 py-2">
+            <p class="m-0">Ricevi notifiche di nuovi messaggi</p>
+            <p class="m-0 text-decoration-underline text-muted">Attiva notifiche desktop</p>
+        </div>
+    </div>
+    <div class="p-2">
+        <div class="input-group-sm d-flex">
+            <span class="input-group-text bg-light"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input id="search-input" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" >
+        </div>
+    </div>
+    <div>
+        <div v-for="(contact, i) in contacts" :key="i" class="py-2 px-3 d-flex border-bottom justify-content-between">
+            <div class="d-flex icon-user">
+                <img :src="contact.avatar" class="rounded-circle me-2 img-fluid">
+                <div class="px-2">
+                    <h6 class="m-0">{{contact.name}}</h6>
+                    <p class="message m-0 text-muted">Ultimo messaggio inviato</p>
+                </div>
+            </div>
+            <div>
+                <span class="text-muted">12:00</span>
+        </div>
+        </div>
+    </div>    
+                </div>
+            </div>
+          </div>
           </div>
 </main>
 <script type="text/javascript" src="./js/script.js"></script>

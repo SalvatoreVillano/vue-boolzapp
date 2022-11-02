@@ -3,5 +3,29 @@ body{
 }
 .bg{
     height: 100vh;
-    background: linear-gradient(#00a884 20%, #dfe0dd 20%);
+    background: linear-gradient(#00a884 15%, #dfe0dd 15%);
+}
+
+.bg-notification{
+   background: #8ddafb
+}
+
+.left-zone{
+    width: 35%;
+}
+
+.icon-mine{
+    height: 70px;
+}
+
+.icon-user img{
+    height: 50px;
+    border-radius: 20%;
+}
+
+.header-icon i{
+    color: rgba(128, 128, 128, 0.466);
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
 }

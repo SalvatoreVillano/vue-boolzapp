@@ -6,7 +6,7 @@ createApp({
                 {
                 id: 1,
                 name: 'Michele',
-                avatar: '_1',
+                avatar: 'img/avatar_1.jpg',
                 visible: true,
                 messages: [
                 {
@@ -29,7 +29,7 @@ createApp({
                 {
                 id: 2,
                 name: 'Fabio',
-                avatar: '_2',
+                avatar: 'img/avatar_2.jpg',
                 visible: true,
                 messages: [
                 {
@@ -52,7 +52,7 @@ createApp({
                 {
                 id: 3,
                 name: 'Samuele',
-                avatar: '_3',
+                avatar: 'img/avatar_3.jpg',
                 visible: true,
                 messages: [
                 {
@@ -75,7 +75,7 @@ createApp({
                 {
                 id: 4,
                 name: 'Alessandro B.',
-                avatar: '_4',
+                avatar: 'img/avatar_4.jpg',
                 visible: true,
                 messages: [
                 {
@@ -93,7 +93,7 @@ createApp({
                 {
                 id: 5,
                 name: 'Alessandro L.',
-                avatar: '_5',
+                avatar: 'img/avatar_5.jpg',
                 visible: true,
                 messages: [
                 {
@@ -111,7 +111,7 @@ createApp({
                 {
                 id: 6,
                 name: 'Claudia',
-                avatar: '_6',
+                avatar: 'img/avatar_6.jpg',
                 visible: true,
                 messages: [
                 {
@@ -134,7 +134,7 @@ createApp({
                 {
                 id: 7,
                 name: 'Federico',
-                avatar: '_7',
+                avatar: 'img/avatar_7.jpg',
                 visible: true,
                 messages: [
                 {
@@ -152,7 +152,7 @@ createApp({
                 {
                 id: 8,
                 name: 'Davide',
-                avatar: '_8',
+                avatar: 'img/avatar_8.jpg',
                 visible: true,
                 messages: [
                 {
@@ -178,7 +178,7 @@ createApp({
     computed: {
 
     },
-    
+
     methods: {
 
     }
