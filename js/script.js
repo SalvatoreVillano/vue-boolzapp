@@ -2,6 +2,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            search: '',
+            currentChat: 0,
             contacts: [
                 {
                 id: 1,
@@ -176,10 +178,17 @@ createApp({
     }
     },
     computed: {
-
-    },
+        filteredList() {
+            return this.contacts.filter(cont => {
+              return cont.name.toLowerCase().includes(this.search.toLowerCase())
+            })
+    }},
 
     methods: {
-
+        setChat(id){
+            this.currentChat = this.contacts.findIndex((contact)=>{
+                return contact.id == id
+            })
+        }
     }
 }).mount('#app');

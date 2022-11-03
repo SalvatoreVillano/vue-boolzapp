@@ -29,3 +29,42 @@ body{
     font-size: 20px;
     cursor: pointer;
 }
+
+.chat{
+    height: 80%;
+    background-image: url("../img/mine.jpg");
+    position:relative;
+}
+ 
+.header-chat{
+    height: 8%;
+}
+
+.contact-list{
+    cursor: pointer;
+}
+
+.chat-wrapper, .chat {
+    width: 70%;
+}
+
+.chat-footer {
+    height: 8%;
+    background-color: #c5c2be;
+    position:absolute;
+    bottom:0px;
+    width: 100%;
+}
+
+.chat-footer input {
+    height: 80%;
+    border: none;
+}
+
+.sent-message {
+    background-color: #c3e3a9;
+}
+
+.received-message {
+    background-color: white;
+}
