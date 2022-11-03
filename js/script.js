@@ -189,6 +189,22 @@ createApp({
             this.currentChat = this.contacts.findIndex((contact)=>{
                 return contact.id == id
             })
+        },
+        sendMessage(msg){
+            if(this.text.length > 0){
+                msg.messages.push({
+                    date:'10/01/2020 15:51:00',
+                    message:this.text,
+                    status: 'sent'
+                });
+                setTimeout(()=>{
+                    msg.messages.push({
+                        date:'10/01/2020 15:51:00',
+                        message: 'ok',
+                        status: 'received'
+                    })
+                },1000)
+            }
         }
     }
 }).mount('#app');
