@@ -59,20 +59,20 @@
                 </div>
             </div>
             <div>
-                <span class="text-muted">12:00</span>
+                <span class="text-muted">{{contacts[currentChat].messages[contacts[currentChat].messages.length-1].date}}</span>
         </div>
         </div>
     </div>    
                 </div>
-                <div class="chat w-75 h-100">
-                    <div class="header-chat bg-light d-flex justify-content-between p-2">
+                <div class="chat w-75 h-100 overflow-auto">
+                    <div class="header-chat bg-light d-flex justify-content-between p-2 ">
                         <div class="d-flex align-items-center">
                             <div class="d-flex icon-user">
                                 <img :src="contacts[currentChat].avatar" alt="Avatar" class="rounded-circle">
                             </div>
                             <div class="d-flex flex-column ms-3">
                                 <h6 class="fs-6 m-0">{{contacts[currentChat].name}}</h5>
-                                <p class="m-0 text-muted">last seen</p>
+                                <p class="m-0 text-muted">Ultimo accesso {{contacts[currentChat].messages[contacts[currentChat].messages.length-1].date}}</p>
                             </div>
                         </div>
                         <div class="header-icon d-flex align-items-center">
@@ -81,8 +81,8 @@
                             <i class="fa-solid fa-ellipsis-vertical fa-lg me-3"></i>
                         </div>
                     </div>
-                    <div class="d-flex p-4 justify-content-center">
-                        <div class="row w-100 g-3 overflow-auto flex-column">
+                    <div class="d-flex p-4  justify-content-center">
+                        <div class="row w-100 g-3 flex-column">
                         <div class="col-5 p-2 rounded-3 d-flex flex-column" v-for="(message, i) in contacts[currentChat].messages" :class="(contacts[currentChat].messages[i].status == 'sent') ? 'sent-message align-self-end' : 'received-message'">
                             <p class="m-0 w-auto">{{message.message}}</p>
                             <span class="text-end text-muted align-self-end">
@@ -91,7 +91,7 @@
                         </div> 
                 </div>
             </div>
-            <div class="chat-footer d-flex align-items-center py-1">
+            <div class="chat-footer position-absolute d-flex align-items-center py-1">
                 <div class="px-4">
                     <i class="fa-regular fa-face-smile fa-xl"></i>
                 </div>
@@ -99,7 +99,8 @@
                     <input @keyup.enter="sendMessage(contacts[currentChat])" v-model.trim="text" id="message" type="text" placeholder="Scrivi un messaggio" class="rounded-3 w-100 px-3">
                 </div>
                 <div class="px-4">
-                    <i class="fas fa-microphone fa-xl"></i>
+                    <i v-if="text != ''" class="fa-solid fa-paper-plane" @click="sendMessage(contacts[currentChat])"></i>
+                    <i v-else class="fas fa-microphone fa-xl"></i>
                 </div>
             </div>
             </div>

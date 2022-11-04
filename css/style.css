@@ -1,6 +1,8 @@
 body{
     height: 100vh;
+    position:relative;
 }
+
 .bg{
     height: 100vh;
     background: linear-gradient(#00a884 15%, #dfe0dd 15%);
@@ -33,7 +35,6 @@ body{
 .chat{
     height: 80%;
     background-image: url("../img/mine.jpg");
-    position:relative;
 }
  
 .header-chat{
@@ -51,14 +52,17 @@ body{
 .chat-footer {
     height: 8%;
     background-color: #c5c2be;
-    position:absolute;
-    bottom:0px;
-    width: 100%;
+    width: 45.7%;
+    bottom: 30px;
 }
 
 .chat-footer input {
     height: 80%;
     border: none;
+}
+
+.chat-footer i{
+    cursor:pointer;
 }
 
 .sent-message {

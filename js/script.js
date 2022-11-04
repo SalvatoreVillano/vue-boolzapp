@@ -4,6 +4,7 @@ createApp({
         return {
             search: '',
             currentChat: 0,
+            text: '',
             contacts: [
                 {
                 id: 1,
