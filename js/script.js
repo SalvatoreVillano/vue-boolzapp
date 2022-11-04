@@ -1,10 +1,12 @@
+var luxonDate = luxon.DateTime;
+const formato = "dd/MM/yyyy HH:mm:ss";
 const { createApp } = Vue
 createApp({
     data() {
         return {
             search: '',
             currentChat: 0,
-            text: '',
+            newMsg: '',
             contacts: [
                 {
                 id: 1,
@@ -191,21 +193,25 @@ createApp({
                 return contact.id == id
             })
         },
-        sendMessage(msg){
-            if(this.text.length > 0){
-                msg.messages.push({
-                    date:'10/01/2020 15:51:00',
-                    message:this.text,
+        sendMessage(){
+            if(!this.newMsg) return
+                newDate = luxonDate.now().toFormat(formato)
+                newSentMessage = {
+                    date: newDate,
+                    message: this.newMsg,
                     status: 'sent'
-                });
+                }
+                this.contacts[this.currentChat].messages.push(newSentMessage)
+                this.newMsg = ''
                 setTimeout(()=>{
-                    msg.messages.push({
-                        date:'10/01/2020 15:51:00',
+                    newDate = luxonDate.now().toFormat(formato)
+                    newReceivedMessage = {
+                        date: newDate,
                         message: 'ok',
                         status: 'received'
-                    })
+                    }
+                    this.contacts[this.currentChat].messages.push(newReceivedMessage)
                 },1000)
             }
         }
-    }
 }).mount('#app');
