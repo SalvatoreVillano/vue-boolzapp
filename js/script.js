@@ -7,6 +7,14 @@ createApp({
             search: '',
             currentChat: 0,
             newMsg: '',
+            frasiRandom: [
+'Esiste un’isola di opportunità all’interno di ogni difficoltà.',
+'Piccole opportunità sono spesso l’inizio di grandi imprese.',
+'Non avrai mai fallito finché continuerai a provare.',
+'Se puoi sognarlo, puoi farlo.',
+'Sbagli il 100% dei colpi che non spari.',
+'Vola solo chi osa farlo'
+            ],
             contacts: [
                 {
                 id: 1,
@@ -205,17 +213,24 @@ createApp({
                 this.newMsg = ''
                 setTimeout(()=>{
                     newDate = luxonDate.now().toFormat(formato)
+                    numrnd = Math.floor(Math.random()*this.frasiRandom.length)
                     newReceivedMessage = {
                         date: newDate,
-                        message: 'ok',
+                        message: this.frasiRandom[numrnd],
                         status: 'received'
                     }
                     this.contacts[this.currentChat].messages.push(newReceivedMessage)
-                },1000)
+                },3000)
             },
                 lastMessage(obj) {
                 const msg = obj.messages.filter((message)=>{
                 return message
+                })
+                return msg[msg.length-1]
+            },
+            lastSeen(obj) {
+                const msg = obj.messages.filter((message)=>{
+                return message.status == 'received'
                 })
                 return msg[msg.length-1]
             }

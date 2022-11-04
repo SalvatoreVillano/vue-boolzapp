@@ -17,7 +17,7 @@
   <body>
       <main>
           <div class="bg" id="app">
-            <div class="container-fluid d-flex flex-column vh-100 p-3">
+            <div class="container-fluid d-flex vh-100 p-3">
                 <div class="chat-wrapper container  d-flex h-100 p-3">
                 <div class="left-zone bg-light overflow-auto">
                 <div class="icon-mine p-1 align-items-center d-flex justify-content-between">
@@ -74,7 +74,7 @@
                             </div>
                             <div class="d-flex flex-column ms-3">
                                 <h6 class="fs-6 m-0">{{contacts[currentChat].name}}</h5>
-                                <p class="m-0 text-muted">Ultimo accesso {{contacts[currentChat].messages[contacts[currentChat].messages.length-1].date}}</p>
+                                <p class="m-0 text-muted">Ultimo accesso {{lastSeen(contacts[currentChat]).date}}</p>
                             </div>
                         </div>
                         <div class="header-icon d-flex align-items-center">
