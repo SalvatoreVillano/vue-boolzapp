@@ -17,8 +17,8 @@
   <body>
       <main>
           <div class="bg" id="app">
-            <div class="container-fluid vh-100 p-3">
-                <div class="chat-wrapper container d-flex h-100 p-3">
+            <div class="container-fluid d-flex flex-column vh-100 p-3">
+                <div class="chat-wrapper container  d-flex h-100 p-3">
                 <div class="left-zone bg-light overflow-auto">
                 <div class="icon-mine p-1 align-items-center d-flex justify-content-between">
         <div class="icon-user d-flex align-content-center">
@@ -57,11 +57,11 @@
                 <img :src="contact.avatar" class="rounded-circle me-2 img-fluid">
                 <div class="px-2 ">
                     <h6 class="m-0">{{contact.name}}</h6>
-                    <p class="message m-0 text-muted">Ultimo messaggio ricevuto</p>
+                    <span class="message m-0 text-muted">{{lastMessage(contact).message}}</span>
                 </div>
             </div>
             <div>
-                <span class="text-muted">{{contacts[currentChat].messages[contacts[currentChat].messages.length-1].date}}</span>
+                <p class="last-message text-muted text-end">{{lastMessage(contact).date}}</p>
         </div>
         </div>
     </div>    

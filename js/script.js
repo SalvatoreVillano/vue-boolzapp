@@ -212,6 +212,12 @@ createApp({
                     }
                     this.contacts[this.currentChat].messages.push(newReceivedMessage)
                 },1000)
+            },
+                lastMessage(obj) {
+                const msg = obj.messages.filter((message)=>{
+                return message
+                })
+                return msg[msg.length-1]
             }
         }
 }).mount('#app');
