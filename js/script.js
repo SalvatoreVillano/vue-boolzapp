@@ -233,6 +233,9 @@ createApp({
                 return message.status == 'received'
                 })
                 return msg[msg.length-1]
-            }
+            },
+            deleteMsg(i){
+            this.contacts[this.currentChat].messages.splice(i, 1);
         }
+    }
 }).mount('#app');

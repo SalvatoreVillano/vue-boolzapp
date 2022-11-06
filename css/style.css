@@ -3,8 +3,11 @@ body{
     position:relative;
 }
 
+main{
+    height: calc(100% - 110px);
+}
+
 .bg{
-    height: 100vh;
     background: linear-gradient(#00a884 15%, #dfe0dd 15%);
 }
 
@@ -35,10 +38,12 @@ body{
 .chat{
     height: 80%;
     background-image: url("../img/mine.jpg");
+    width: calc(100% - 500px);
 }
  
 .header-chat{
     height: 8%;
+    
 }
 
 .contact-list{
@@ -73,3 +78,12 @@ body{
     background-color: white;
 }
 
+.myfont{
+    font-size: 0.8rem;
+    inline-size: 150px;
+    overflow-wrap: break-word;
+}
+
+.deleteBtn{
+    cursor: pointer;
+}
